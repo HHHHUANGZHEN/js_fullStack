@@ -5,3 +5,8 @@ html 结构写好
 
 - 标签的语义化 
   a 代替 div 
+
+- 界面 切分 切图
+  按模块来切  .feed-item  词汇量
+  块级元素 做盒子 先不要在意细节，从外到内，从上到下，从左到右，写良好结构及语义化的html
+  .feed-content>.photos+hs+p+.author
