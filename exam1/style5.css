@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+    font-size: 14px;
+}
+.page{
+    width: 100%;
+}
+.page-hd{
+    height: 106px;
+    width: 100%;
+    background-color: #2b8eeb;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+.page-hd .user-pic .pic img {
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    background-size: cover;
+} 
+.page-hd .user {
+    margin: 16px;
+    vertical-align: middle;
+    float: left;
+}
+.user-name .tag{
+    height: 20px;
+    width: 90px;
+    background: url(./images/vip.png);
+    background-size: cover;
+    border-radius: 10px;
+
+}
+.user-info{
+    
+    padding-right: 80px;
+    color: #fff;
+}
+.user-info .info{
+    text-align: center;
+    padding-top: 10px;
+    right: 34px;
+    position: absolute;
+}
+.user-info .info::after{
+    content: '';
+    height: 14px;
+    width: 14px;
+    background: url(./images/tag.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -18px;
+    top: 13px;
+}
