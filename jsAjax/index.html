@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = null
+        if (window.XMLHttpRequest){
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        // open()中 第一个参数：请求方式；第二个参数：请求地址；第三个参数：true 表示是异步操作/false 同步
+        xhr.open('get','mock.json',true)
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+        xhr.send()
+        // console.log(xhr.responseText)
+        // console.log(xhr.readyState,xhr.status)  
+        // readyState: 执行send方法 1 ；send执行成功 2 ；返回成功 3 ；解析完成 4 ;
+        // status 200 : 代表当次请求成功
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText)
+            }
+        }
+        console.log(123456)
+    </script>
+</body>
+</html>
