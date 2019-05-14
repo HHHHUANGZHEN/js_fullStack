@@ -6,7 +6,7 @@
     bindtap="switchTap"
     >{{item.name}}</view>
   </view>
-  <scroll-view class="categroy-right" scroll-y scroll-into-view="{{toView}}" scroll-with-animation="{{true}}">
+  <scroll-view class="categroy-right" scroll-y scroll-into-view="{{toView}}" scroll-with-animation="{{true}}" bindscroll="switchContent">
     <block wx:for="{{detail}}" wx:key="{{item.id}}">
       <view class="cate-box" id="{{item.id}}">
         <view class="cate-banner">
