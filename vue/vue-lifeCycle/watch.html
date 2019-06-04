@@ -8,13 +8,17 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="wendu">{{wendu}}</div>
+    <p class="suggestion">{{suggestion}}</p>
+  </div>
   <script>
     var app = new Vue({
       el: '#app',
       data () {
         return {
-          
+          wendu: 29,
+          suggestion: '短袖'
         }
       }
     })
