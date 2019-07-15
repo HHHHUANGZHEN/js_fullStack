@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hashchange 实现前端路由</title>
+</head>
+<body>
+  <a href="javascript:;" data-href="/">home</a>
+  <a href="javascript:;" data-href="/">book</a>
+  <a href="javascript:;" data-href="/">movie</a>
+  <div id="content"></div>
+</body>
+<script>
+  // hashchange 导航
+  // 内容显示区域
+  class Router {
+    constructor(options) {
+
+    }
+    // 链接的点击事件
+    bindEvent() {
+
+    }
+    init() {
+      window.addEventListener('hasnchange', this.updateView.bind(this));
+    }
+    updateView() {
+      console.log('update')
+    }
+  }
+</script>
+</html>
