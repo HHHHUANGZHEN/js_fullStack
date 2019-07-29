@@ -5,8 +5,20 @@
         <img src="../../assets/img/logo.png" alt="">
       </h1>
       <md-field class="login-input">
-        <md-input-item ref="name" title="手机号" placeholder="请输入手机号" v-model="user.name" type="phone"></md-input-item>
-        <md-input-item v-model="user.password" type="password" ref="id" title="密码" placeholder="请输入密码" ></md-input-item>
+        <md-input-item
+          ref="name"
+          title="手机号"
+          placeholder="请输入手机号"
+          v-model="user.name"
+          type="phone"
+        ></md-input-item>
+        <md-input-item
+          v-model="user.password"
+          type="password"
+          ref="id"
+          title="密码"
+          placeholder="请输入密码"
+          ></md-input-item>
       </md-field>
       <div class="login-btn">
         <span @click="loginOnClick">
@@ -19,10 +31,13 @@
 </template>
 
 <script>
+import { Toast } from 'mand-mobile'
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data () {
     return {
+      userData: null,
       user: {
         name: '15330734121',
         password: '12345'
@@ -30,7 +45,23 @@ export default {
     }
   },
   methods: {
-    loginOnClick () {}
+    loginOnClick () {
+      this.loginAjax()
+    },
+    loginAjax() {
+      let params = {
+        userName: this.user.name,
+        passWord: this.user.password
+      }
+      this.$http.post('/user', params).then(res => {
+        this.userData = res.data.data
+        let tmpUser = JSON.stringify(this.userData)
+        console.log(res.data.data)
+        //存到vuex里面
+        Toast.succeed(`欢迎回来，${this.userData.name}`, 1500)
+      })
+    },
+    ...mapActions(['setUser', 'setUserData'])
   }
 }
 </script>
@@ -86,5 +117,4 @@ export default {
     height 50px
     font-size 22px
 </style>
-
 
